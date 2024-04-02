@@ -46,3 +46,8 @@ int main()
 
     return 0;
 }
+
+OUTPUT
+
+Cost of Optimal BST is 142
+
