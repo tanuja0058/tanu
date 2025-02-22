@@ -1,0 +1,135 @@
+/* Gallery Container */
+.background-container {
+    background-image: url('background.jpeg');
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Center the image */
+    height: 500px; /* Adjust the height of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Make sure the overlay works properly */
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Black transparent overlay */
+    z-index: 1; /* Ensure overlay is above the background image */
+}
+
+.background-container h1 {
+    color: white; /* Make the text white so it contrasts with the background */
+    z-index: 2; /* Ensure text stays above the overlay */
+    font-size: 2.5em; /* Adjust font size as needed */
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 15px; /* Space between gallery items */
+    padding: 20px;
+}
+
+/* Gallery Items */
+.gallery-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Slight zoom effect on image hover */
+}
+
+.gallery-item p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto; /* Enable scrolling if the content is too large */
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin: auto;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+}
+
+/* Caption Styles */
+#caption {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}

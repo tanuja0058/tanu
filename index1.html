@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="background-container">
+        <h1>Exploring My Thai Image Gallery</h1>
+    </div>
+    
+    
+
+<div class="gallery-container">
+    <!-- Example images -->
+    <div class="gallery-item" onclick="openModal(this)">
+        <img src="image1.jpg" alt=" Wat Suthat Templ">
+        Wat Suthat Temple
+    </div>
+
+    <!-- Add more images here -->
+    <div class="gallery-item" onclick="openModal(this)">
+        <img src="image2.jpg" alt="Wat Chedi Luang">
+        Wat Chedi Luang
+    </div>
+    <div class="gallery-item" onclick="openModal(this)">
+        <img src="image3.jpg" alt="Wat Phra Sri Sanphet">
+        Wat Phra Sri Sanphet
+    </div>
+    <div class="gallery-item" onclick="openModal(this)">
+        <img src="image4.jpg" alt="Wat Chiang Man">
+        Wat Chiang Man
+    </div>
+    <div class="gallery-item" onclick="openModal(this)">
+        <img src="image5.jpg" alt="Wat Phra That Doi Suthep">
+        Wat Phra That Doi Suthep
+    </div>
+    <div class="gallery-item" onclick="openModal(this)">
+        <img src="image6.jpg" alt="Wat Mahathat">
+        Wat Mahathat
+    </div>
+    
+</div>
+
+<!-- Modal for displaying large images -->
+<div id="modal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id='largeImg'>
+  <div id='caption'></div>
+</div>
+
+<script src='Script.js'></script>
+</body>
+</html>
